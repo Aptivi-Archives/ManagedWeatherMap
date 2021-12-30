@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net5.0;net48</TargetFrameworks>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>EoflaOE</Authors>
+    <Company>EoflaOE</Company>
+    <Description>OpenWeatherMap API backend</Description>
+    <Copyright>Copyright (c) 2021 EoflaOE and its companies.</Copyright>
+    <PackageProjectUrl>https://github.com/EoflaOE/ManagedWeatherMap</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/EoflaOE/ManagedWeatherMap</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>weather;c#;vb.net;openweathermap;api;backend;forecast</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extensification" Version="2021.9.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>
