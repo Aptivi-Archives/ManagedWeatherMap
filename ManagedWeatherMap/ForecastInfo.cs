@@ -23,7 +23,7 @@
  * 
  */
 
-namespace Core
+namespace ManagedWeatherMap.Core
 {
     /// <summary>
     /// Forecast information

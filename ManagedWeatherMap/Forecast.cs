@@ -27,16 +27,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
-using System.Net;
 using System.Text;
 using Extensification.DictionaryExts;
 using Newtonsoft.Json.Linq;
 
 #if NETCOREAPP
 using System.Net.Http;
+#else
+using System.Net;
 #endif
 
-namespace Core
+namespace ManagedWeatherMap.Core
 {
     public static partial class Forecast
     {
