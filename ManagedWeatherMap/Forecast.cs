@@ -32,6 +32,10 @@ using System.Text;
 using Extensification.DictionaryExts;
 using Newtonsoft.Json.Linq;
 
+#if NETCOREAPP
+using System.Net.Http;
+#endif
+
 namespace Core
 {
     public static partial class Forecast
@@ -45,39 +49,9 @@ namespace Core
         /// <returns>A class containing properties of weather information</returns>
         public static ForecastInfo GetWeatherInfo(long CityID, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
-            // TODO: Use HttpClient if possible. Not available on .NET Framework 4.8, so use compiler constants to change behavior.
             ForecastInfo WeatherInfo = new ForecastInfo() { CityID = CityID, TemperatureMeasurement = Unit };
             string WeatherURL = $"http://api.openweathermap.org/data/2.5/weather?id={CityID}&appid={APIKey}";
-            WebClient WeatherDownloader = new WebClient();
-            string WeatherData;
-            JToken WeatherToken;
-            Debug.WriteLine("Made new instance of class with {0} and {1}", CityID, Unit);
-            Debug.WriteLine("Weather URL: {0}", WeatherURL);
-
-            // Deal with measurements
-            if (Unit == UnitMeasurement.Imperial)
-            {
-                WeatherURL += "&units=imperial";
-            }
-            else
-            {
-                WeatherURL += "&units=metric";
-            }
-
-            // Download and parse JSON data
-            WeatherData = WeatherDownloader.DownloadString(WeatherURL);
-            WeatherToken = JToken.Parse(WeatherData);
-
-            // Put needed data to the class
-            WeatherInfo.Weather = (WeatherCondition)WeatherToken.SelectToken("weather").First.SelectToken("id").ToObject(typeof(WeatherCondition));
-            WeatherInfo.Temperature = (double)WeatherToken.SelectToken("main").SelectToken("temp").ToObject(typeof(double));
-            WeatherInfo.FeelsLike = (double)WeatherToken.SelectToken("main").SelectToken("feels_like").ToObject(typeof(double));
-            WeatherInfo.Pressure = (double)WeatherToken.SelectToken("main").SelectToken("pressure").ToObject(typeof(double));
-            WeatherInfo.Humidity = (double)WeatherToken.SelectToken("main").SelectToken("humidity").ToObject(typeof(double));
-            WeatherInfo.WindSpeed = (double)WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(typeof(double));
-            WeatherInfo.WindDirection = (double)WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(typeof(double));
-            WeatherInfo.CityName = WeatherToken.SelectToken("name").ToString();
-            return WeatherInfo;
+            return GetWeatherInfo(WeatherInfo, WeatherURL, Unit);
         }
 
         /// <summary>
@@ -88,13 +62,29 @@ namespace Core
         /// <returns>A class containing properties of weather information</returns>
         public static ForecastInfo GetWeatherInfo(string CityName, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
-            var WeatherInfo = new ForecastInfo() { CityName = CityName, TemperatureMeasurement = Unit };
+            ForecastInfo WeatherInfo = new ForecastInfo() { CityName = CityName, TemperatureMeasurement = Unit };
             string WeatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={CityName}&appid={APIKey}";
-            var WeatherDownloader = new WebClient();
+            return GetWeatherInfo(WeatherInfo, WeatherURL, Unit);
+        }
+
+        /// <summary>
+        /// Gets current weather info from OpenWeatherMap
+        /// </summary>
+        /// <param name="WeatherInfo">Initial forecast info class instance</param>
+        /// <param name="WeatherURL">An URL to the weather API request</param>
+        /// <returns>A class containing properties of weather information</returns>
+        internal static ForecastInfo GetWeatherInfo(ForecastInfo WeatherInfo, string WeatherURL, UnitMeasurement Unit = UnitMeasurement.Metric)
+        {
             string WeatherData;
             JToken WeatherToken;
-            Debug.WriteLine("Made new instance of class with {0} and {1}", CityName, Unit);
-            Debug.WriteLine("Weather URL: {0}", WeatherURL);
+            Debug.WriteLine("Weather URL: {0} | Unit: {1}", WeatherURL, Unit);
+
+            // Use HttpClient if we're not on .NET Framework as it doesn't have it.
+#if NETCOREAPP
+            HttpClient WeatherDownloader = new HttpClient();
+#else
+            WebClient WeatherDownloader = new WebClient();
+#endif
 
             // Deal with measurements
             if (Unit == UnitMeasurement.Imperial)
@@ -107,7 +97,11 @@ namespace Core
             }
 
             // Download and parse JSON data
+#if NETCOREAPP
+            WeatherData = WeatherDownloader.GetStringAsync(WeatherURL).Result;
+#else
             WeatherData = WeatherDownloader.DownloadString(WeatherURL);
+#endif
             WeatherToken = JToken.Parse(WeatherData);
 
             // Put needed data to the class
@@ -128,7 +122,6 @@ namespace Core
         public static Dictionary<long, string> ListAllCities()
         {
             string WeatherCityListURL = $"http://bulk.openweathermap.org/sample/city.list.json.gz";
-            var WeatherCityListDownloader = new WebClient();
             GZipStream WeatherCityListData;
             Stream WeatherCityListDataStream;
             var WeatherCityListUncompressed = new List<byte>();
@@ -137,8 +130,17 @@ namespace Core
             var WeatherCityList = new Dictionary<long, string>();
             Debug.WriteLine("Weather City List URL: {0}", WeatherCityListURL);
 
-            // Download and parse JSON data
+            // Open the stream to the city list URL
+#if NETCOREAPP
+            HttpClient WeatherCityListDownloader = new HttpClient();
+            WeatherCityListDataStream = WeatherCityListDownloader.GetStreamAsync(WeatherCityListURL).Result;
+#else
+            WebClient WeatherCityListDownloader = new WebClient();
             WeatherCityListDataStream = WeatherCityListDownloader.OpenRead(WeatherCityListURL);
+#endif
+
+            // Download and parse the JSON. Since the output is gzipped, we'll have to uncompress it using stream, since the city list
+            // is large anyways. This saves you from downloading full 45+ MB of text.
             WeatherCityListData = new GZipStream(WeatherCityListDataStream, CompressionMode.Decompress, false);
             while (WeatherCityListReadByte != -1)
             {
