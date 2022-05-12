@@ -114,6 +114,7 @@ namespace ManagedWeatherMap.Core
             WeatherInfo.WindSpeed = (double)WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(typeof(double));
             WeatherInfo.WindDirection = (double)WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(typeof(double));
             WeatherInfo.CityID = (long)WeatherToken.SelectToken("id").ToObject(typeof(long));
+            WeatherInfo.CityName = (string)WeatherToken.SelectToken("name").ToObject(typeof(string));
             return WeatherInfo;
         }
 
