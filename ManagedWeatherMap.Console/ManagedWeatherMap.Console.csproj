@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0;netcoreapp3.1;net48</TargetFrameworks>
+    <ApplicationIcon>OfficialAppIcon-ManagedWeatherMap.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="OfficialAppIcon-ManagedWeatherMap.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ManagedWeatherMap\ManagedWeatherMap.csproj" />
+  </ItemGroup>
+
+</Project>
