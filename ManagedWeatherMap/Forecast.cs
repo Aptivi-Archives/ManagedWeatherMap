@@ -50,9 +50,8 @@ namespace ManagedWeatherMap.Core
         /// <returns>A class containing properties of weather information</returns>
         public static ForecastInfo GetWeatherInfo(long CityID, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
-            ForecastInfo WeatherInfo = new ForecastInfo() { CityID = CityID, TemperatureMeasurement = Unit };
             string WeatherURL = $"http://api.openweathermap.org/data/2.5/weather?id={CityID}&appid={APIKey}";
-            return GetWeatherInfo(WeatherInfo, WeatherURL, Unit);
+            return GetWeatherInfo(WeatherURL, Unit);
         }
 
         /// <summary>
@@ -63,19 +62,18 @@ namespace ManagedWeatherMap.Core
         /// <returns>A class containing properties of weather information</returns>
         public static ForecastInfo GetWeatherInfo(string CityName, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
-            ForecastInfo WeatherInfo = new ForecastInfo() { CityName = CityName, TemperatureMeasurement = Unit };
             string WeatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={CityName}&appid={APIKey}";
-            return GetWeatherInfo(WeatherInfo, WeatherURL, Unit);
+            return GetWeatherInfo(WeatherURL, Unit);
         }
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
         /// </summary>
-        /// <param name="WeatherInfo">Initial forecast info class instance</param>
         /// <param name="WeatherURL">An URL to the weather API request</param>
         /// <returns>A class containing properties of weather information</returns>
-        internal static ForecastInfo GetWeatherInfo(ForecastInfo WeatherInfo, string WeatherURL, UnitMeasurement Unit = UnitMeasurement.Metric)
+        internal static ForecastInfo GetWeatherInfo(string WeatherURL, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
+            ForecastInfo WeatherInfo = new ForecastInfo();
             string WeatherData;
             JToken WeatherToken;
             Debug.WriteLine("Weather URL: {0} | Unit: {1}", WeatherURL, Unit);
@@ -115,6 +113,7 @@ namespace ManagedWeatherMap.Core
             WeatherInfo.WindDirection = (double)WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(typeof(double));
             WeatherInfo.CityID = (long)WeatherToken.SelectToken("id").ToObject(typeof(long));
             WeatherInfo.CityName = (string)WeatherToken.SelectToken("name").ToObject(typeof(string));
+            WeatherInfo.TemperatureMeasurement = Unit;
             return WeatherInfo;
         }
 
