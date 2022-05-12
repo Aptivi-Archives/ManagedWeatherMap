@@ -6,8 +6,6 @@ ManagedWeatherMap is an OpenWeatherMap API backend for .NET Framework 4.8 and th
 
 It currently only supports the free weather and forecast information API. It doesn't support paid features yet. If you can contribute, great!
 
-It currently uses WebClient, which is obsolete. Using HttpClient in the future for .NET 5.0 and 6.0.
-
 ### License
 
 ```
