@@ -17,6 +17,7 @@
     <ApplicationIcon>OfficialAppIcon-ManagedWeatherMap.ico</ApplicationIcon>
     <PackageIcon>OfficialAppIcon-ManagedWeatherMap-512.png</PackageIcon>
     <Version>1.0.1</Version>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
