@@ -11,7 +11,7 @@ It currently only supports the free weather and forecast information API. It doe
 ```
 MIT License
 
-Copyright (c) 2021 EoflaOE and its companies
+Copyright (c) 2021 Aptivi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

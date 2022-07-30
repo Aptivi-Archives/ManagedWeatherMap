@@ -1,0 +1,43 @@
+version: 1.x-{build}
+image: Visual Studio 2022
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: ''
+  package_version: 1.0.1-build{build}
+environment:
+  WEBHOOK_URL:
+    secure: p3nnkhnWtqFFH8UJ1eaKFfRjFPlOVhNtmLjd94R7+KQb8Q/JX4kp0Bn+gYyZ3x44Z6buxH7NyPX+o/8QJHf2scjhUYQJFLXY//So49l+avc9WoWdea/SwtiE80O4fatzXfV9xOm9mqfInC1SIJ94tAqQPS04aynsVUVXWCdFe8s=
+before_build:
+- cmd: nuget restore "%APPVEYOR_BUILD_FOLDER%\ManagedWeatherMap.sln"
+build:
+  verbosity: minimal
+after_build:
+- cmd: 7z a devbuild.zip "%APPVEYOR_BUILD_FOLDER%\ManagedWeatherMap\bin\Debug\"
+artifacts:
+- path: devbuild.zip
+  name: Development build of ManagedWeatherMap
+- path: ManagedWeatherMap\bin\Debug\ManagedWeatherMap.*.nupkg
+deploy:
+- provider: NuGet
+  server: https://www.nuget.org/api/v2/package
+  api_key:
+    secure: 2ocxItByklPOySTf0USeSC6NpQGHHkhYMzj08PlSKNZE/VxLSLzcQpdt4VMTQnJI
+  symbol_server: https://www.nuget.org/api/v2/package
+notifications:
+- provider: Webhook
+  url: https://discord.com/api/webhooks/997173015345365073/U_0cQhjyKAV7psQY9FtwwZEdtMt2gbjvVxsh-aaDbo8tIYMVbIeBnyhdSnH2U8Jj5ZnA
+  method: POST
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
+on_success:
+- ps: >-
+    Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
+
+    ./send.ps1 success $env:WEBHOOK_URL
+on_failure:
+- ps: >-
+    Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
+
+    ./send.ps1 failure $env:WEBHOOK_URL

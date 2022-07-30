@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFrameworks>net6.0;netcoreapp3.1;net48</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>EoflaOE</Authors>
-    <Company>EoflaOE</Company>
+    <Authors>Aptivi</Authors>
+    <Company>Aptivi</Company>
     <Description>OpenWeatherMap API backend</Description>
-    <Copyright>Copyright (c) 2021 EoflaOE and its companies.</Copyright>
-    <PackageProjectUrl>https://github.com/EoflaOE/ManagedWeatherMap</PackageProjectUrl>
+    <Copyright>Copyright (c) 2021 Aptivi.</Copyright>
+    <PackageProjectUrl>https://github.com/Aptivi/ManagedWeatherMap</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/EoflaOE/ManagedWeatherMap</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Aptivi/ManagedWeatherMap</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>weather;c#;vb.net;openweathermap;api;backend;forecast</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
