@@ -7,7 +7,7 @@ dotnet_csproj:
   package_version: 1.0.1-build{build}
 environment:
   WEBHOOK_URL:
-    secure: p3nnkhnWtqFFH8UJ1eaKFfRjFPlOVhNtmLjd94R7+KQb8Q/JX4kp0Bn+gYyZ3x44Z6buxH7NyPX+o/8QJHf2scjhUYQJFLXY//So49l+avc9WoWdea/SwtiE80O4fatzXfV9xOm9mqfInC1SIJ94tAqQPS04aynsVUVXWCdFe8s=
+    secure: p3nnkhnWtqFFH8UJ1eaKFfRjFPlOVhNtmLjd94R7+KTkhlTonPIXlcKjzVRT0KYSJrGTXn3V/4TdfpC83tq0q67lIs/re3TlUyRsKvWnFTBO9/Q0Vbdf6bRlblWIPIh7DaNloeUZCB68Uf09FNd8i9qojXScaVQ1dI1kImKc1u8=
 before_build:
 - cmd: nuget restore "%APPVEYOR_BUILD_FOLDER%\ManagedWeatherMap.sln"
 build:
@@ -24,13 +24,6 @@ deploy:
   api_key:
     secure: 2ocxItByklPOySTf0USeSC6NpQGHHkhYMzj08PlSKNZE/VxLSLzcQpdt4VMTQnJI
   symbol_server: https://www.nuget.org/api/v2/package
-notifications:
-- provider: Webhook
-  url: https://discord.com/api/webhooks/997173015345365073/U_0cQhjyKAV7psQY9FtwwZEdtMt2gbjvVxsh-aaDbo8tIYMVbIeBnyhdSnH2U8Jj5ZnA
-  method: POST
-  on_build_success: true
-  on_build_failure: true
-  on_build_status_changed: true
 on_success:
 - ps: >-
     Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
