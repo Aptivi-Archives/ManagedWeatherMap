@@ -27,20 +27,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Net.Http;
 using System.Text;
 using Extensification.DictionaryExts;
 using Newtonsoft.Json.Linq;
-
-#if NETCOREAPP
-using System.Net.Http;
-#else
-using System.Net;
-#endif
 
 namespace ManagedWeatherMap.Core
 {
     public static partial class Forecast
     {
+        internal static HttpClient WeatherDownloader = new();
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
@@ -73,17 +69,10 @@ namespace ManagedWeatherMap.Core
         /// <returns>A class containing properties of weather information</returns>
         internal static ForecastInfo GetWeatherInfo(string WeatherURL, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
-            ForecastInfo WeatherInfo = new ForecastInfo();
+            ForecastInfo WeatherInfo = new();
             string WeatherData;
             JToken WeatherToken;
             Debug.WriteLine("Weather URL: {0} | Unit: {1}", WeatherURL, Unit);
-
-            // Use HttpClient if we're not on .NET Framework as it doesn't have it.
-#if NETCOREAPP
-            HttpClient WeatherDownloader = new HttpClient();
-#else
-            WebClient WeatherDownloader = new WebClient();
-#endif
 
             // Deal with measurements
             if (Unit == UnitMeasurement.Imperial)
@@ -96,11 +85,7 @@ namespace ManagedWeatherMap.Core
             }
 
             // Download and parse JSON data
-#if NETCOREAPP
             WeatherData = WeatherDownloader.GetStringAsync(WeatherURL).Result;
-#else
-            WeatherData = WeatherDownloader.DownloadString(WeatherURL);
-#endif
             WeatherToken = JToken.Parse(WeatherData);
 
             // Put needed data to the class
@@ -132,13 +117,7 @@ namespace ManagedWeatherMap.Core
             Debug.WriteLine("Weather City List URL: {0}", WeatherCityListURL);
 
             // Open the stream to the city list URL
-#if NETCOREAPP
-            HttpClient WeatherCityListDownloader = new HttpClient();
-            WeatherCityListDataStream = WeatherCityListDownloader.GetStreamAsync(WeatherCityListURL).Result;
-#else
-            WebClient WeatherCityListDownloader = new WebClient();
-            WeatherCityListDataStream = WeatherCityListDownloader.OpenRead(WeatherCityListURL);
-#endif
+            WeatherCityListDataStream = WeatherDownloader.GetStreamAsync(WeatherCityListURL).Result;
 
             // Download and parse the JSON. Since the output is gzipped, we'll have to uncompress it using stream, since the city list
             // is large anyways. This saves you from downloading full 45+ MB of text.
