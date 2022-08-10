@@ -16,6 +16,78 @@
       "is_incremental": false
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ManagedWeatherMap.Core.Forecast.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ManagedWeatherMap.Core.Forecast.html",
+          "hash": "XrXdg80bD7awItFj30CJK7OG7/u+7npvHtnyv37NL2M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ManagedWeatherMap.Core.ForecastInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ManagedWeatherMap.Core.ForecastInfo.html",
+          "hash": "NrCcKtDlIjquhGqn4aCbj/DaCwuSeVW9C0nKJDpXxRs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ManagedWeatherMap.Core.UnitMeasurement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ManagedWeatherMap.Core.UnitMeasurement.html",
+          "hash": "aHLDlxfBdR/2JBgBm/CZ7mMtjbU0odITdFVhch0YC8E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ManagedWeatherMap.Core.WeatherCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ManagedWeatherMap.Core.WeatherCondition.html",
+          "hash": "WfGaV1hkl9qDzIm2IYsHACwluG3jhDtUExNBoPmSrbI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ManagedWeatherMap.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ManagedWeatherMap.Core.html",
+          "hash": "ozKY26l6tjMzDdm+TcNlcCv1RtDRPS9Ctp/9CBZvboQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "JDbEw4lKjmLIcBTNmIFaK2q+mR18uE1WIpU7wF6FQ0w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
@@ -33,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "YRmnFoPaOxFl2evu6LXNr5JoBn/n1MdrdBX1LzjfM34="
+          "hash": "f/YaayEhQF4o1v9rcxumkdGz1t5dbtDdbKhIMKd4/Ss="
         }
       },
       "is_incremental": false,
@@ -55,6 +127,12 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
