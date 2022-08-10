@@ -3,7 +3,7 @@
         {
             "src": [
                 {
-                    "files": [ "ManagedWeatherMap/**.vbproj" ],
+                    "files": [ "ManagedWeatherMap/**.csproj" ],
                     "src": ".."
                 }
             ],
