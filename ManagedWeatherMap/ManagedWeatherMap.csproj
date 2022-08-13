@@ -14,16 +14,11 @@
     <PackageTags>weather;c#;vb.net;openweathermap;api;backend;forecast</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <ApplicationIcon>OfficialAppIcon-ManagedWeatherMap.ico</ApplicationIcon>
     <PackageIcon>OfficialAppIcon-ManagedWeatherMap-512.png</PackageIcon>
     <Version>1.0.2</Version>
     <PackageVersion>1.0.2</PackageVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="OfficialAppIcon-ManagedWeatherMap.ico" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
