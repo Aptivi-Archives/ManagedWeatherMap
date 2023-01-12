@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ManagedWeatherMap.Core.Forecast.html",
-          "hash": "XrXdg80bD7awItFj30CJK7OG7/u+7npvHtnyv37NL2M="
+          "hash": "gAl7ldIQwtoxUcwfj2Yor1vA/eE8bJcRBSyE8spqSVk="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ManagedWeatherMap.Core.ForecastInfo.html",
-          "hash": "NrCcKtDlIjquhGqn4aCbj/DaCwuSeVW9C0nKJDpXxRs="
+          "hash": "MCOe1wYsniomCH3PKZkl42/MAaTmYpQlMOYIsWcxixc="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ManagedWeatherMap.Core.UnitMeasurement.html",
-          "hash": "aHLDlxfBdR/2JBgBm/CZ7mMtjbU0odITdFVhch0YC8E="
+          "hash": "zkyZqh5dC2OVCwiQaUwFDM7FssXFVrRY758PgKCkAzU="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ManagedWeatherMap.Core.WeatherCondition.html",
-          "hash": "WfGaV1hkl9qDzIm2IYsHACwluG3jhDtUExNBoPmSrbI="
+          "hash": "lS/eQ3N44KvjLz+yl+Lm1mrKUUrtsGRX3K4Oybx2iZg="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "5wofRiJZpEzFS7Uy7ywuWouUco0I9VWTyzeVJ6pe0UY="
+          "hash": "tqCPPM+Oh/oP7pTs/ezUO4DQdsfzVvkWKZ3MM/TE9Vk="
         }
       },
       "is_incremental": false,
