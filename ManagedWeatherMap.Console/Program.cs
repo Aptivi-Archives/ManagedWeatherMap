@@ -48,13 +48,9 @@ namespace ManagedWeatherMap.ConsoleTest
 
             // Get weather info
             if (IsNumeric)
-            {
                 forecastInfo = Forecast.GetWeatherInfo(FinalID, ApiKey, UnitMeasurement.Metric);
-            }
             else
-            {
                 forecastInfo = Forecast.GetWeatherInfo(StringID, ApiKey, UnitMeasurement.Metric);
-            }
             
             // Print the weather information
             Console.WriteLine("City ID: " + forecastInfo.CityID);

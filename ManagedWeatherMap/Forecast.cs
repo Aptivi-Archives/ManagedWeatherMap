@@ -29,7 +29,6 @@ using System.IO;
 using System.IO.Compression;
 using System.Net.Http;
 using System.Text;
-using Extensification.DictionaryExts;
 using Newtonsoft.Json.Linq;
 
 namespace ManagedWeatherMap.Core
@@ -133,7 +132,12 @@ namespace ManagedWeatherMap.Core
 
             // Put needed data to the class
             foreach (JToken WeatherCityToken in WeatherCityListToken)
-                WeatherCityList.AddIfNotFound((long)WeatherCityToken["id"], (string)WeatherCityToken["name"]);
+            {
+                long cityId = (long)WeatherCityToken["id"];
+                string cityName = (string)WeatherCityToken["name"];
+                if (!WeatherCityList.ContainsKey(cityId))
+                    WeatherCityList.Add(cityId, cityName);
+            }
 
             // Return list
             return WeatherCityList;
