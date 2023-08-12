@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aptivi.github.io/ManagedWeatherMap/api/ManagedWeatherMap.Core.Forecast.html</loc>
-    <lastmod>2023-07-27T11:07:04+00:00</lastmod>
+    <lastmod>2023-08-12T11:00:18+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/ManagedWeatherMap/api/ManagedWeatherMap.Core.ForecastInfo.html</loc>
-    <lastmod>2023-07-27T11:07:04+00:00</lastmod>
+    <lastmod>2023-08-12T11:00:18+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/ManagedWeatherMap/api/ManagedWeatherMap.Core.UnitMeasurement.html</loc>
-    <lastmod>2023-07-27T11:07:04+00:00</lastmod>
+    <lastmod>2023-08-12T11:00:18+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/ManagedWeatherMap/api/ManagedWeatherMap.Core.WeatherCondition.html</loc>
-    <lastmod>2023-07-27T11:07:04+00:00</lastmod>
+    <lastmod>2023-08-12T11:00:18+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/ManagedWeatherMap/api/ManagedWeatherMap.Core.html</loc>
-    <lastmod>2023-07-27T11:07:04+00:00</lastmod>
+    <lastmod>2023-08-12T11:00:18+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/ManagedWeatherMap/index.html</loc>
-    <lastmod>2023-07-27T11:07:04+00:00</lastmod>
+    <lastmod>2023-08-12T11:00:18+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
