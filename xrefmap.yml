@@ -32,6 +32,25 @@ references:
   isSpec: "True"
   fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfo
   nameWithType: Forecast.GetWeatherInfo
+- uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.Int64,System.String,ManagedWeatherMap.Core.UnitMeasurement)
+  name: GetWeatherInfoAsync(Int64, String, UnitMeasurement)
+  href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_System_Int64_System_String_ManagedWeatherMap_Core_UnitMeasurement_
+  commentId: M:ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.Int64,System.String,ManagedWeatherMap.Core.UnitMeasurement)
+  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.Int64, System.String, ManagedWeatherMap.Core.UnitMeasurement)
+  nameWithType: Forecast.GetWeatherInfoAsync(Int64, String, UnitMeasurement)
+- uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.String,System.String,ManagedWeatherMap.Core.UnitMeasurement)
+  name: GetWeatherInfoAsync(String, String, UnitMeasurement)
+  href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_System_String_System_String_ManagedWeatherMap_Core_UnitMeasurement_
+  commentId: M:ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.String,System.String,ManagedWeatherMap.Core.UnitMeasurement)
+  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.String, System.String, ManagedWeatherMap.Core.UnitMeasurement)
+  nameWithType: Forecast.GetWeatherInfoAsync(String, String, UnitMeasurement)
+- uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync*
+  name: GetWeatherInfoAsync
+  href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_
+  commentId: Overload:ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync
+  isSpec: "True"
+  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync
+  nameWithType: Forecast.GetWeatherInfoAsync
 - uid: ManagedWeatherMap.Core.Forecast.ListAllCities
   name: ListAllCities()
   href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_ListAllCities
@@ -45,6 +64,19 @@ references:
   isSpec: "True"
   fullName: ManagedWeatherMap.Core.Forecast.ListAllCities
   nameWithType: Forecast.ListAllCities
+- uid: ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync
+  name: ListAllCitiesAsync()
+  href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_ListAllCitiesAsync
+  commentId: M:ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync
+  fullName: ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync()
+  nameWithType: Forecast.ListAllCitiesAsync()
+- uid: ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync*
+  name: ListAllCitiesAsync
+  href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_ListAllCitiesAsync_
+  commentId: Overload:ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync
+  isSpec: "True"
+  fullName: ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync
+  nameWithType: Forecast.ListAllCitiesAsync
 - uid: ManagedWeatherMap.Core.ForecastInfo
   name: ForecastInfo
   href: api/ManagedWeatherMap.Core.ForecastInfo.html

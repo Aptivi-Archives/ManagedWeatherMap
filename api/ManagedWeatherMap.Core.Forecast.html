@@ -212,6 +212,118 @@
   </table>
   
   
+  <a id="ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_" data-uid="ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync*"></a>
+  <h4 id="ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_System_Int64_System_String_ManagedWeatherMap_Core_UnitMeasurement_" data-uid="ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.Int64,System.String,ManagedWeatherMap.Core.UnitMeasurement)">GetWeatherInfoAsync(Int64, String, UnitMeasurement)</h4>
+  <div class="markdown level1 summary"><p>Gets current weather info from OpenWeatherMap</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;ForecastInfo&gt; GetWeatherInfoAsync(long CityID, string APIKey, UnitMeasurement Unit = default(UnitMeasurement))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">CityID</span></td>
+        <td><p>City ID</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">APIKey</span></td>
+        <td><p>API key</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ManagedWeatherMap.Core.UnitMeasurement.html">UnitMeasurement</a></td>
+        <td><span class="parametername">Unit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="ManagedWeatherMap.Core.ForecastInfo.html">ForecastInfo</a>&gt;</td>
+        <td><p>A class containing properties of weather information</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_" data-uid="ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync*"></a>
+  <h4 id="ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_System_String_System_String_ManagedWeatherMap_Core_UnitMeasurement_" data-uid="ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.String,System.String,ManagedWeatherMap.Core.UnitMeasurement)">GetWeatherInfoAsync(String, String, UnitMeasurement)</h4>
+  <div class="markdown level1 summary"><p>Gets current weather info from OpenWeatherMap</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;ForecastInfo&gt; GetWeatherInfoAsync(string CityName, string APIKey, UnitMeasurement Unit = default(UnitMeasurement))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">CityName</span></td>
+        <td><p>City name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">APIKey</span></td>
+        <td><p>API Key</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ManagedWeatherMap.Core.UnitMeasurement.html">UnitMeasurement</a></td>
+        <td><span class="parametername">Unit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="ManagedWeatherMap.Core.ForecastInfo.html">ForecastInfo</a>&gt;</td>
+        <td><p>A class containing properties of weather information</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="ManagedWeatherMap_Core_Forecast_ListAllCities_" data-uid="ManagedWeatherMap.Core.Forecast.ListAllCities*"></a>
   <h4 id="ManagedWeatherMap_Core_Forecast_ListAllCities" data-uid="ManagedWeatherMap.Core.Forecast.ListAllCities">ListAllCities()</h4>
   <div class="markdown level1 summary"><p>Lists all the available cities</p>
@@ -232,6 +344,32 @@
     <tbody>
       <tr>
         <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Int64</span>, <span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ManagedWeatherMap_Core_Forecast_ListAllCitiesAsync_" data-uid="ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync*"></a>
+  <h4 id="ManagedWeatherMap_Core_Forecast_ListAllCitiesAsync" data-uid="ManagedWeatherMap.Core.Forecast.ListAllCitiesAsync">ListAllCitiesAsync()</h4>
+  <div class="markdown level1 summary"><p>Lists all the available cities</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;Dictionary&lt;long, string&gt;&gt; ListAllCitiesAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">Dictionary</span>&lt;<span class="xref">System.Int64</span>, <span class="xref">System.String</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
