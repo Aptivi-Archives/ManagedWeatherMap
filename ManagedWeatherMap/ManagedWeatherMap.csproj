@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Authors>Aptivi</Authors>
     <Company>Aptivi</Company>
     <Description>OpenWeatherMap API backend</Description>
