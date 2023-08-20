@@ -14,17 +14,23 @@ references:
   fullName: ManagedWeatherMap.Core.Forecast
   nameWithType: Forecast
 - uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(System.Int64,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  name: GetWeatherInfo(Int64, String, UnitMeasurement)
+  name: GetWeatherInfo(long, string, UnitMeasurement)
   href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfo_System_Int64_System_String_ManagedWeatherMap_Core_UnitMeasurement_
   commentId: M:ManagedWeatherMap.Core.Forecast.GetWeatherInfo(System.Int64,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(System.Int64, System.String, ManagedWeatherMap.Core.UnitMeasurement)
-  nameWithType: Forecast.GetWeatherInfo(Int64, String, UnitMeasurement)
+  name.vb: GetWeatherInfo(Long, String, UnitMeasurement)
+  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(long, string, ManagedWeatherMap.Core.UnitMeasurement)
+  fullName.vb: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(Long, String, ManagedWeatherMap.Core.UnitMeasurement)
+  nameWithType: Forecast.GetWeatherInfo(long, string, UnitMeasurement)
+  nameWithType.vb: Forecast.GetWeatherInfo(Long, String, UnitMeasurement)
 - uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(System.String,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  name: GetWeatherInfo(String, String, UnitMeasurement)
+  name: GetWeatherInfo(string, string, UnitMeasurement)
   href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfo_System_String_System_String_ManagedWeatherMap_Core_UnitMeasurement_
   commentId: M:ManagedWeatherMap.Core.Forecast.GetWeatherInfo(System.String,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(System.String, System.String, ManagedWeatherMap.Core.UnitMeasurement)
-  nameWithType: Forecast.GetWeatherInfo(String, String, UnitMeasurement)
+  name.vb: GetWeatherInfo(String, String, UnitMeasurement)
+  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(string, string, ManagedWeatherMap.Core.UnitMeasurement)
+  fullName.vb: ManagedWeatherMap.Core.Forecast.GetWeatherInfo(String, String, ManagedWeatherMap.Core.UnitMeasurement)
+  nameWithType: Forecast.GetWeatherInfo(string, string, UnitMeasurement)
+  nameWithType.vb: Forecast.GetWeatherInfo(String, String, UnitMeasurement)
 - uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfo*
   name: GetWeatherInfo
   href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfo_
@@ -33,17 +39,23 @@ references:
   fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfo
   nameWithType: Forecast.GetWeatherInfo
 - uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.Int64,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  name: GetWeatherInfoAsync(Int64, String, UnitMeasurement)
+  name: GetWeatherInfoAsync(long, string, UnitMeasurement)
   href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_System_Int64_System_String_ManagedWeatherMap_Core_UnitMeasurement_
   commentId: M:ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.Int64,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.Int64, System.String, ManagedWeatherMap.Core.UnitMeasurement)
-  nameWithType: Forecast.GetWeatherInfoAsync(Int64, String, UnitMeasurement)
+  name.vb: GetWeatherInfoAsync(Long, String, UnitMeasurement)
+  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(long, string, ManagedWeatherMap.Core.UnitMeasurement)
+  fullName.vb: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(Long, String, ManagedWeatherMap.Core.UnitMeasurement)
+  nameWithType: Forecast.GetWeatherInfoAsync(long, string, UnitMeasurement)
+  nameWithType.vb: Forecast.GetWeatherInfoAsync(Long, String, UnitMeasurement)
 - uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.String,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  name: GetWeatherInfoAsync(String, String, UnitMeasurement)
+  name: GetWeatherInfoAsync(string, string, UnitMeasurement)
   href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_System_String_System_String_ManagedWeatherMap_Core_UnitMeasurement_
   commentId: M:ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.String,System.String,ManagedWeatherMap.Core.UnitMeasurement)
-  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(System.String, System.String, ManagedWeatherMap.Core.UnitMeasurement)
-  nameWithType: Forecast.GetWeatherInfoAsync(String, String, UnitMeasurement)
+  name.vb: GetWeatherInfoAsync(String, String, UnitMeasurement)
+  fullName: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(string, string, ManagedWeatherMap.Core.UnitMeasurement)
+  fullName.vb: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync(String, String, ManagedWeatherMap.Core.UnitMeasurement)
+  nameWithType: Forecast.GetWeatherInfoAsync(string, string, UnitMeasurement)
+  nameWithType.vb: Forecast.GetWeatherInfoAsync(String, String, UnitMeasurement)
 - uid: ManagedWeatherMap.Core.Forecast.GetWeatherInfoAsync*
   name: GetWeatherInfoAsync
   href: api/ManagedWeatherMap.Core.Forecast.html#ManagedWeatherMap_Core_Forecast_GetWeatherInfoAsync_
