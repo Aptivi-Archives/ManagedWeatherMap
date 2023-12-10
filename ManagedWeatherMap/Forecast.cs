@@ -33,7 +33,10 @@ using Newtonsoft.Json.Linq;
 
 namespace ManagedWeatherMap.Core
 {
-    public static partial class Forecast
+    /// <summary>
+    /// The forecast tools
+    /// </summary>
+    public static class Forecast
     {
         internal static HttpClient WeatherDownloader = new();
 
@@ -42,6 +45,7 @@ namespace ManagedWeatherMap.Core
         /// </summary>
         /// <param name="CityID">City ID</param>
         /// <param name="APIKey">API key</param>
+        /// <param name="Unit">The preferred unit to use</param>
         /// <returns>A class containing properties of weather information</returns>
         public static ForecastInfo GetWeatherInfo(long CityID, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
@@ -54,6 +58,7 @@ namespace ManagedWeatherMap.Core
         /// </summary>
         /// <param name="CityName">City name</param>
         /// <param name="APIKey">API Key</param>
+        /// <param name="Unit">The preferred unit to use</param>
         /// <returns>A class containing properties of weather information</returns>
         public static ForecastInfo GetWeatherInfo(string CityName, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
@@ -65,6 +70,7 @@ namespace ManagedWeatherMap.Core
         /// Gets current weather info from OpenWeatherMap
         /// </summary>
         /// <param name="WeatherURL">An URL to the weather API request</param>
+        /// <param name="Unit">The preferred unit to use</param>
         /// <returns>A class containing properties of weather information</returns>
         internal static ForecastInfo GetWeatherInfo(string WeatherURL, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
@@ -89,6 +95,7 @@ namespace ManagedWeatherMap.Core
         /// </summary>
         /// <param name="CityID">City ID</param>
         /// <param name="APIKey">API key</param>
+        /// <param name="Unit">The preferred unit to use</param>
         /// <returns>A class containing properties of weather information</returns>
         public static async Task<ForecastInfo> GetWeatherInfoAsync(long CityID, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
@@ -101,6 +108,7 @@ namespace ManagedWeatherMap.Core
         /// </summary>
         /// <param name="CityName">City name</param>
         /// <param name="APIKey">API Key</param>
+        /// <param name="Unit">The preferred unit to use</param>
         /// <returns>A class containing properties of weather information</returns>
         public static async Task<ForecastInfo> GetWeatherInfoAsync(string CityName, string APIKey, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
@@ -112,6 +120,7 @@ namespace ManagedWeatherMap.Core
         /// Gets current weather info from OpenWeatherMap
         /// </summary>
         /// <param name="WeatherURL">An URL to the weather API request</param>
+        /// <param name="Unit">The preferred unit to use</param>
         /// <returns>A class containing properties of weather information</returns>
         internal static async Task<ForecastInfo> GetWeatherInfoAsync(string WeatherURL, UnitMeasurement Unit = UnitMeasurement.Metric)
         {
@@ -196,7 +205,7 @@ namespace ManagedWeatherMap.Core
                     WeatherCityListUncompressed.Add((byte)WeatherCityListReadByte);
             }
 
-            WeatherCityListToken = JToken.Parse(Encoding.Default.GetString(WeatherCityListUncompressed.ToArray()));
+            WeatherCityListToken = JToken.Parse(Encoding.Default.GetString([.. WeatherCityListUncompressed]));
 
             // Put needed data to the class
             foreach (JToken WeatherCityToken in WeatherCityListToken)
