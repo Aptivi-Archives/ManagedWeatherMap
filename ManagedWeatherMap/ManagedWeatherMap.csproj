@@ -17,8 +17,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-ManagedWeatherMap-512.png</PackageIcon>
-    <Version>1.2.1</Version>
-    <PackageVersion>1.2.1</PackageVersion>
+    <Version>1.2.2</Version>
+    <PackageVersion>1.2.2</PackageVersion>
     <LangVersion>latest</LangVersion>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
